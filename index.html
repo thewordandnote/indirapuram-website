@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indirapuram.online – 100% Vegetarian Chinese, Italian &amp; Tandoor Delivery</title>
+<meta name="description" content="Fresh vegetarian Chinese, Italian and Tandoor delivered to your doorstep in Indirapuram. Everything at ₹99 each. Bulk orders for parties and events.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Nunito:wght@400;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#14532d; --green-soft:#e9f1e2; --red:#d62828; --cream:#fffaf0;
+  --ink:#1f2a22; --muted:#5b665e; --line:#e6e0d0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,250,240,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.logo{font-family:'Playfair Display',serif;font-weight:800;font-size:1.6rem;color:var(--green)}
+.logo b{color:var(--red);font-weight:800}
+.logo small{display:block;font-family:'Nunito',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+nav ul{display:flex;gap:26px;list-style:none;font-weight:600}
+nav a{padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a.on{border-color:var(--red);color:var(--red)}
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:11px 24px;border-radius:8px;border:0;cursor:pointer;font-size:1rem;font-family:inherit}
+.btn:hover{background:#b81f1f}
+.btn.alt{background:var(--green)}
+.btn.alt:hover{background:#0d3d20}
+.burger{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer}
+
+/* Coming soon */
+.soon{text-align:center;padding:36px 0 6px}
+.soon h2{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(3rem,11vw,7.5rem);line-height:1;color:var(--red);letter-spacing:.02em}
+.soon p{font-size:1.15rem;color:var(--muted);margin:10px 0 18px}
+.btn.big{font-size:1.2rem;padding:15px 34px;border-radius:40px}
+.btn.big:hover{transform:scale(1.04)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding:44px 0 30px}
+.script{font-family:'Caveat',cursive;font-size:1.7rem;color:var(--muted)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800;color:var(--green);margin:6px 0 10px}
+.hero h1 span{color:var(--red)}
+.hero h2{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:600}
+.hero p{font-size:1.15rem;margin:8px 0 22px}
+.hero p::after{content:"";display:block;width:190px;height:4px;background:var(--green);border-radius:4px;margin-top:8px}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.act{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;gap:10px;align-items:center;box-shadow:0 3px 10px rgba(20,83,45,.06)}
+.act:hover{border-color:var(--red)}
+.act i{font-style:normal;font-size:1.8rem}
+.act strong{display:block;line-height:1.2}
+.act small{color:var(--muted)}
+
+/* Food visual – replace emoji with real photos (see note in README comment below) */
+.visual{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;min-height:400px}
+.dish{position:relative;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:5.5rem;background-size:cover;background-position:center;overflow:hidden}
+.dish span{position:absolute;left:10px;top:10px;background:var(--green);color:#fff;font-family:'Caveat',cursive;font-size:1.3rem;padding:0 14px;border-radius:6px}
+.d1{background-color:#f6d98a}
+.d2{background-color:#f4a58a;grid-row:span 2}
+.d3{background-color:#c9dca6}
+/* To use real photos: .d1{background-image:url('images/chinese.jpg')} etc., and delete the emoji in the HTML */
+
+/* Offer banner */
+.offer{background:#fff3e6;border:2px solid #f4b5a8;border-radius:14px;padding:18px 24px;margin:10px 0 50px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.offer .mega{font-size:2.6rem}
+.offer h3{font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--green)}
+.offer h3 b{color:var(--red);font-size:1.25em}
+.pill{display:inline-block;background:var(--red);color:#fff;font-weight:800;padding:4px 22px;border-radius:30px;margin-top:4px}
+
+/* Sections */
+section{padding:50px 0}
+.title{text-align:center;margin-bottom:28px}
+.title h2{font-size:clamp(1.9rem,4vw,2.6rem);color:var(--green)}
+.title p{color:var(--muted)}
+.tabs{display:flex;justify-content:center;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+.tab{border:1.5px solid var(--green);background:#fff;color:var(--green);padding:8px 20px;border-radius:30px;font-weight:700;cursor:pointer;font-family:inherit;font-size:1rem}
+.tab[aria-selected="true"]{background:var(--green);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.item .em{font-size:2.4rem}
+.item h3{font-size:1.15rem}
+.item p{color:var(--muted);font-size:.92rem;flex:1}
+.item .row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.price{font-weight:800;color:var(--red);font-size:1.2rem}
+.add{background:var(--green);color:#fff;border:0;border-radius:8px;padding:7px 16px;font-weight:700;cursor:pointer;font-family:inherit}
+.add:hover{background:#0d3d20}
+
+/* Bulk + offers */
+.band{background:var(--green-soft)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line)}
+.card h3{font-size:1.5rem;color:var(--green);margin-bottom:8px}
+.card ul{margin:12px 0 18px 20px}
+.card li{margin:4px 0}
+
+/* FAQ */
+.faq{max-width:780px;margin:0 auto}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:0 18px}
+summary{cursor:pointer;font-weight:700;padding:15px 0;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";color:var(--red);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 16px;color:var(--muted)}
+
+/* Cart bar */
+#cartbar{position:fixed;left:0;right:0;bottom:0;background:var(--green);color:#fff;padding:12px 20px;display:none;justify-content:space-between;align-items:center;z-index:30}
+#cartbar.show{display:flex}
+#cartbar .btn{background:#fff;color:var(--green)}
+
+footer{background:var(--green);color:#e9f1e2;padding:36px 0 90px;text-align:center}
+footer .logo{color:#fff}
+footer p{margin-top:6px}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .visual{min-height:300px}
+  .two{grid-template-columns:1fr}
+  nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:var(--cream);flex-direction:column;padding:16px 20px;gap:12px;border-bottom:1px solid var(--line)}
+  nav ul.open{display:flex}
+  .burger{display:block}
+  .nav .btn.top{display:none}
+}
+@media(max-width:560px){.actions{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="logo">Indirapuram<b>.online</b><small>CHINESE · ITALIAN · TANDOOR — 100% VEGETARIAN</small></a>
+    <nav aria-label="Main">
+      <ul id="menu-list">
+        <li><a href="#home" class="on">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#bulk">Bulk Orders</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="btn top" href="#menu">Order Now</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">☰</button>
+  </div>
+</header>
+
+<main id="home">
+<div class="wrap">
+  <div class="soon">
+    <h2>COMING SOON</h2>
+    <p>We're getting ready to bring fresh vegetarian food to your doorstep.</p>
+    <a class="btn big" href="mailto:thewordandnote@gmail.com?subject=I%20am%20excited%20for%20indirapuram.online&amp;body=I%20live%20in%20______%20locality%2C%20I%20want%20indirapuram.online%20to%20be%20fully%20functional%20ASAP">ARE YOU EXCITED?</a>
+  </div>
+  <div class="hero">
+    <div>
+      <div class="script">Good Food • Great Neighbourhood • Always Veg</div>
+      <h1>Indirapuram<span>.online</span></h1>
+      <h2>Fresh vegetarian favourites, delivered.</h2>
+      <p>Chinese, Italian &amp; Tandoor — now at your doorstep!</p>
+      <div class="actions">
+        <a class="act" href="#menu"><i>🛵</i><span><strong>Order Online</strong><small>Fast &amp; easy</small></span></a>
+        <a class="act" href="#bulk"><i>👥</i><span><strong>Bulk Orders</strong><small>For events &amp; parties</small></span></a>
+        <a class="act" href="tel:+910000000000"><i>📞</i><span><strong>Order on Call</strong><small>We're just a call away</small></span></a>
+      </div>
+    </div>
+    <div class="visual" aria-hidden="true">
+      <div class="dish d1">🍜<span>Chinese</span></div>
+      <div class="dish d2">🍕<span>Italian</span></div>
+      <div class="dish d3">🍢<span>Tandoor</span></div>
+    </div>
+  </div>
+
+  <div class="offer">
+    <div class="mega">📣</div>
+    <div>
+      <h3>GET EVERYTHING @ <b>₹99</b> EACH</h3>
+      <span class="pill">DELIVERED TO YOUR DOORSTEP!</span>
+    </div>
+  </div>
+</div>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="title"><h2>Our Menu</h2><p>Every dish ₹99. Pure vegetarian.</p></div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-cat="Chinese">Chinese</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="Italian">Italian</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="Tandoor">Tandoor</button>
+    </div>
+    <div class="grid" id="items"></div>
+  </div>
+</section>
+
+<section class="band" id="bulk">
+  <div class="wrap two">
+    <div class="card" id="offers">
+      <h3>Bulk orders for parties &amp; events</h3>
+      <p>Birthday, kitty party, office lunch or society event — we deliver big orders, hot and on time.</p>
+      <ul>
+        <li>Special rates on large quantities</li>
+        <li>Order at least a day before for best slots</li>
+        <li>Chinese, Italian and Tandoor in one order</li>
+      </ul>
+      <a class="btn alt" href="https://wa.me/910000000000?text=Hi%2C%20I%20want%20to%20place%20a%20bulk%20order" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+    </div>
+    <div class="card">
+      <h3>Birthday special 🎂</h3>
+      <p>Celebrating a birthday? Tell us when you order and get an exclusive treat with your meal.</p>
+      <ul>
+        <li>Mention the birthday while ordering</li>
+        <li>Works for home and office deliveries</li>
+      </ul>
+      <a class="btn" href="tel:+910000000000">Call to claim offer</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="title"><h2>Frequently Asked Questions</h2><p>Quick answers to help you order better.</p></div>
+    <div class="faq">
+      <details><summary>Minimum order quantity</summary><p>Our minimum order value for delivery is ₹XXX. (Edit this answer with your actual minimum.)</p></details>
+      <details><summary>Special birthday offers</summary><p>Mention the birthday when you order and we'll add something special. (Edit with your offer details.)</p></details>
+      <details><summary>Bulk order offers</summary><p>We offer special rates for parties, events and gatherings. Call or WhatsApp us with your quantity for a quote.</p></details>
+      <details><summary>Maximum delivery time</summary><p>Most orders reach you within XX–XX minutes in Indirapuram. (Edit with your actual time.)</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="cartbar" role="status">
+  <span><strong id="cn">0</strong> items · ₹<strong id="ct">0</strong></span>
+  <a class="btn" id="checkout" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="logo">Indirapuram<b style="color:#ffb4a8">.online</b></div>
+    <p>Chinese · Italian · Tandoor — 100% Vegetarian</p>
+    <p>📞 +91 00000 00000 &nbsp;|&nbsp; Indirapuram, Ghaziabad</p>
+    <p>© <span id="yr"></span> Indirapuram.online</p>
+  </div>
+</footer>
+
+<script>
+// ====== EDIT THESE ======
+var PHONE = "910000000000";   // your WhatsApp number with country code, no + or spaces
+var PRICE = 99;
+var MENU = {
+  Chinese:[
+    ["🍜","Veg Hakka Noodles","Wok-tossed noodles with crunchy vegetables"],
+    ["🍚","Veg Fried Rice","Fragrant rice with spring onion and veggies"],
+    ["🥟","Veg Momos (6 pcs)","Steamed dumplings with spicy chutney"],
+    ["🥢","Veg Manchurian","Crispy veg balls in tangy Manchurian gravy"],
+    ["🌶️","Chilli Paneer","Paneer cubes tossed with capsicum and onion"],
+    ["🍝","Schezwan Noodles","Spicy noodles with schezwan sauce"]
+  ],
+  Italian:[
+    ["🍕","Margherita Pizza","Classic cheese and tomato"],
+    ["🍕","Veggie Delight Pizza","Loaded with capsicum, onion, olives and corn"],
+    ["🍝","White Sauce Pasta","Creamy penne with herbs"],
+    ["🍝","Red Sauce Pasta","Tangy tomato and garlic"],
+    ["🥖","Garlic Bread","Toasted with butter and herbs"],
+    ["🧀","Cheese Burst Pizza","Extra cheese in every bite"]
+  ],
+  Tandoor:[
+    ["🍢","Paneer Tikka","Marinated paneer, grilled in the tandoor"],
+    ["🍄","Mushroom Tikka","Smoky stuffed mushrooms"],
+    ["🥦","Hariyali Tikka","Green herb marinated vegetables"],
+    ["🫓","Butter Naan","Soft tandoor-baked bread"],
+    ["🥔","Tandoori Aloo","Spiced baby potatoes, charred"],
+    ["🌯","Paneer Roll","Tikka wrapped in a rumali roti"]
+  ]
+};
+// ========================
+
+var cart = {}, cat = "Chinese";
+var box = document.getElementById("items");
+
+function render(){
+  box.innerHTML = "";
+  MENU[cat].forEach(function(d){
+    var el = document.createElement("div");
+    el.className = "item";
+    el.innerHTML = '<div class="em">'+d[0]+'</div><h3>'+d[1]+'</h3><p>'+d[2]+'</p>' +
+      '<div class="row"><span class="price">₹'+PRICE+'</span><button class="add">Add</button></div>';
+    el.querySelector(".add").onclick = function(){ cart[d[1]] = (cart[d[1]]||0)+1; update(); };
+    box.appendChild(el);
+  });
+}
+function update(){
+  var n=0, lines=[];
+  for (var k in cart){ n += cart[k]; lines.push(cart[k]+" x "+k); }
+  document.getElementById("cn").textContent = n;
+  document.getElementById("ct").textContent = n*PRICE;
+  document.getElementById("cartbar").className = n ? "show" : "";
+  var msg = "Hi, I'd like to order:\n"+lines.join("\n")+"\nTotal: Rs "+(n*PRICE);
+  document.getElementById("checkout").href = "https://wa.me/"+PHONE+"?text="+encodeURIComponent(msg);
+}
+document.querySelectorAll(".tab").forEach(function(t){
+  t.onclick = function(){
+    document.querySelectorAll(".tab").forEach(function(x){ x.setAttribute("aria-selected","false"); });
+    t.setAttribute("aria-selected","true");
+    cat = t.dataset.cat; render();
+  };
+});
+function toggleMenu(b){
+  var l = document.getElementById("menu-list");
+  var open = l.classList.toggle("open");
+  b.setAttribute("aria-expanded", open);
+}
+document.querySelectorAll("#menu-list a").forEach(function(a){
+  a.onclick = function(){ document.getElementById("menu-list").classList.remove("open"); };
+});
+document.getElementById("yr").textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
 
